@@ -30,6 +30,7 @@
     "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8",
     "babel-loader": "^8.1.0",
+    "babel-plugin-static-fs": "^3.0.0",
     "chrome-webstore-upload": "^0.4.4",
     "chrome-webstore-upload-cli": "^1.2.1",
     "clean-webpack-plugin": "^3.0.0",
@@ -89,6 +90,7 @@
     "jquery": "^3.5.1",
     "kefir": "^3.8.8",
     "lodash.unescape": "^4.0.1",
+    "lunr-languages": "^1.9.0",
     "preact": "^10.5.9",
     "preact-compat": "^3.19.0",
     "promise-worker": "^2.0.1",
@@ -97,6 +99,7 @@
     "react-timeout": "^2.0.1",
     "react-tooltip": "^4.2.13",
     "remeda": "0.0.27",
+    "segmentit": "^2.0.3",
     "serialize-javascript": "^5.0.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
     "uuid": "^3.4.0"

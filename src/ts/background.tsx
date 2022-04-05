@@ -549,6 +549,7 @@ const doIndexUpdate = async () => {
     //   1
     // );
   } catch (e) {
+    console.log(e, ' could not doIndex ')
     console.error("couldn't doIndexUpdate ", e);
     enqueueException(`doIndexUpdate failed. ${e.name}: ${e.message}`, 0);
   }

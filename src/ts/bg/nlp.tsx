@@ -33,7 +33,7 @@ const tweet_fields = [
 
 // export const loadIndex = (loadedIndexJson) => {console.log(loadedIndexJson); return isNil(loadedIndexJson) ?  makeIndex() : elasticlunr.Index.load(JSON.parse(loadedIndexJson))}
 export const loadIndex = (loadedIndexJson) => {
-  //console.log(loadedIndexJson);
+  console.log(loadedIndexJson, 'loadedIndexJson');
   return isNil(loadedIndexJson)
     ? makeIndex()
     : elasticlunr.Index.load(loadedIndexJson);
@@ -48,7 +48,6 @@ const initIndex = function (this: any) {
 
 function _makeIndex(config) {
   var idx = new elasticlunr.Index<IndexTweet>();
-
   idx.pipeline.add(
     elasticlunr.trimmer,
     elasticlunr.stopWordFilter,

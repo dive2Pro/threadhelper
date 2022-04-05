@@ -8,6 +8,13 @@ import { dbDelMany, dbGetMany, dbPutMany } from './idb_wrapper';
 import { makeIndex } from './nlp';
 import { updateIndexAndStoreToDb } from './stgOps';
 
+import { stopWordFilter } from './stop_word_filter';
+import { lunrZh } from './lunr.zh'
+
+stopWordFilter(elasticlunr.default);
+require('./lunr.stemmer.support')(elasticlunr.default);
+lunrZh(elasticlunr);
+
 export const loadIndexFromIdb = async (
   db_promise: Promise<IDBPDatabase<thTwitterDB>>
 ) => {
@@ -16,6 +23,7 @@ export const loadIndexFromIdb = async (
   const index = isNil(indexJson)
     ? makeIndex()
     : (elasticlunr.Index.load(indexJson) as elasticlunr.Index<IndexTweet>);
+  index.use(elasticlunr.zh)
   return index;
 };
 
